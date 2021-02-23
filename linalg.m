@@ -15,10 +15,13 @@ maxPrice=max(Yo);
 
 ## Use las ecuaciones normales para calcular los parámetros de
 ## regresión lineal
-theta=inv(Xo'*Xo)*Xo'*Yo;
+## theta=inv(Xo'*Xo)*Xo'*Yo;
+theta=pinv(Xo)*Yo;
 
 ## Grafique los puntos originales y la recta de regresión lineal con
 ## al menos 100 puntos
+figure(1,"name","Regresión lineal");
+
 hold off;
 plot(Xo(:,2),Yo,'bx'); ## Datos originales
 
